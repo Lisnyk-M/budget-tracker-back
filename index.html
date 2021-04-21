@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .list {
+            list-style: none;
+        }
+
+        .text {
+            font-size: 14px;
+        }
+
+        .instructions {
+            list-style: decimal;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>REST API для роботи з коллекцією контактів</h2>
+    <ul class="instructions">
+        <li>
+            <p>Для реєстрації нового користувача необхідно відправити POST - запрос на ендпоінт: /auth/register</p>
+            <pre class="text">
+                в body {
+                    "email": "ivandemid@gmail.com",
+                    "password": "ts7G8jhShWoz9"
+                } 
+             </pre>
+            <p>У відповіді на запит прийде URL-згенерованого аватара, після цього на вказану адресу прийде лист з
+                посиланням, на яке необхідно перейти для верифікації користувача </p>
+        </li>
+        <li>
+            <p>Після реєстрації необхідно здійснити login користувача, для цього відправити POST - запрос на ендпоінт:
+                /auth/login</p>
+            <pre class="text">
+                в body {
+                    "email": "ivandemid@gmail.com",
+                    "password": "ts7G8jhShWoz9"
+                }                                 
+             </pre>
+            <p>У відповіді на запит прийде токен, який необхідно вказувати у заголовку Authorisation</p>
+        </li>
+        <li>
+            <p>Для виходу користувача використати метод POST, ендпоінт /auth/logout</p>
+        </li>
+        <li>
+            <p>Для завантаження аватара з комп'ютера користувача потрібно використати метод PATCH, ендпоінт
+                /users/avatars
+                /auth/login. В body вказати тип form-data, створити ключ із назвою avatar і типом file, вибрати файл
+                зображення який необхідно вигрузити і відправити запрос. Після чого у відповіді прийде URL-нового
+                зображення
+            </p>
+        </li>
+    </ul>
+    <h2>Список ендпоінтів:</h2>
+    <ul class="list">
+        <li>POST: /auth/register</li>
+        <li>POST: /auth/login</li>
+        <li>POST: /auth/logout; Authorization: "Bearer token"</li>
+        <li>PATCH: /users/avatars; (body: form-data; key: avatar )</li>
+        <li>GET: /users/current</li>
+        <br />
+        <li>GET: /api/contacts</li>
+        <li>GET: /api/contacts/:contactId</li>
+        <li>POST: /api/contacts</li>
+        <li>PATCH: /api/contacts/:contactId</li>
+        <li>DELETE: /api/contacts/:contactId</li>
+    </ul>
+    <h3>Query:</h3>
+    <p>page, limit, sub ["free", "pro", "premium"]</p>
+</body>
+
+</html>
