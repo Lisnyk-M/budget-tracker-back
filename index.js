@@ -29,6 +29,7 @@ function logErrors(err, req, res, next) {
 }
 
 app.use(json());
+app.use(cors({ origin: "https://lisnyk-m-btrack.herokuapp.com/" }));
 app.use(cors({ origin: "http://localhost:3000" }));
 app.use(morgan('combined'));
 app.use('/', userRoutes);
