@@ -68,6 +68,8 @@ class UserController {
 
     async verifyUser(req, res, next) {
         const { params: { verificationToken } } = req;
+
+        console.log(verificationToken);
         const tokenData = await Token.findOne({
             verificationToken
         })
