@@ -1,9 +1,10 @@
 ### Working page:  
-https://lisnyk-m-btrack.netlify.app/
+Front: https://lisnyk-m-btrack.netlify.app/  
+Back: https://lisnyk-m-btrack.herokuapp.com/  
 
 ### Endpoints:  
-POST: /auth/register  
-POST: /auth/login  
+POST: /auth/register  body: {name, email, password}   
+POST: /auth/login  body: {email, password}
 POST: /auth/logout  Authorization: "Bearer token"  
 GET /auth/verify/:verificationToken   
 
