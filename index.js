@@ -29,8 +29,8 @@ function logErrors(err, req, res, next) {
 }
 
 app.use(json());
-app.use(cors({ origin: "https://lisnyk-m-btrack.netlify.app/" }));
-app.use(cors({ origin: "http://localhost:3000" }));
+app.use(cors({ origin: "https://lisnyk-m-btrack.netlify.app" }));
+// app.use(cors({ origin: "http://localhost:3000" }));
 app.use(morgan('combined'));
 app.use('/', userRoutes);
 app.use('/', entriesRouter);
