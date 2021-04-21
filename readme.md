@@ -1,18 +1,16 @@
 ### Working page:  
-https://lisnyk-m-hw-04.herokuapp.com/
+https://lisnyk-m-btrack.netlify.app/
 
 ### Endpoints:  
 POST: /auth/register  
 POST: /auth/login  
 POST: /auth/logout  Authorization: "Bearer token"  
-GET: /users/current  Authorization: "Bearer token"  
-PATCH: /users  
+GET /auth/verify/:verificationToken   
 
-GET: /contacts  
-GET: /contacts/:contactId  
-POST: /contacts  
-PATCH: /contacts/:contactId  
-DELETE: /contacts/:contactId  
+GET /entries/:date Authorization: "Bearer token"   
+PUT /entries/position/:date  Authorization: "Bearer token"   
+POST /entries Authorization: "Bearer token"   
+DELETE /entries/:date   Authorization: "Bearer token"   
 
-### Query:  
-page, limit, sub ["free", "pro", "premium"]
+
+
