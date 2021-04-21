@@ -6,7 +6,8 @@ Back: https://lisnyk-m-btrack.herokuapp.com/
 POST: /auth/register  body: {name, email, password}   
 POST: /auth/login  body: {email, password}
 POST: /auth/logout  Authorization: "Bearer token"  
-GET /auth/verify/:verificationToken   
+GET /auth/verify/:verificationToken  
+GET /users 
 
 GET /entries/:date Authorization: "Bearer token"   
 PUT /entries/position/:date  Authorization: "Bearer token"   
